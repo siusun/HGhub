@@ -129,7 +129,7 @@ jobs:
         run: pnpm tauri android init --ci
 
       - name: 编译 APK（按 ABI 分包）
-        run: pnpm tauri android build --apk --split-per-abi --target aarch64 armv7 x86_64
+        run: pnpm tauri android build --apk --split-per-abi --target armv7
 
       - name: 签名 APK
         env:
@@ -228,7 +228,7 @@ jobs:
   # ================= 发布 =================
   release:
     name: Publish GitHub Release
-    needs: [windows, android, macos]
+    needs: [android]
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     permissions:
