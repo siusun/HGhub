@@ -1,4 +1,4 @@
-name: Release
+name: Release without sign
 
 # 打 tag（v1.2.3）即自动出包并发布 Release；也可以在 Actions 页手动跑一次只出产物。
 on:
